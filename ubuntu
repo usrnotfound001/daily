@@ -4,17 +4,6 @@ https://blog.csdn.net/dark5669/article/details/53157718
 
 先到NVIDIA 官网上下载驱动文件（.run 格式）
 
-1.按住CTRL+ALT+F1 进入命令行
-
-2.    sudo service lightdm stop    或者   sudo stop lightdm
-
-3.    sudo init 3
-
-4.  安装驱动程序：     ＃:  sudo    ./NVIDIA-Linux-x86_64-177.67-pkg2.run      //当前目录下执行NVIDIA驱动程序
-
-5.   按照提示安装完成，简单方法重启就好了     sudo  reboot
-
--------------
 
 问题１　在装驱动之前退出Ｘ server
 ERROR: You appear to be running an X server; please exit X before installing. For further details, please see the section INSTALLING THE NVIDIA DRIVER in the README available on the Linux driver
@@ -68,6 +57,12 @@ Nouveau kernel driver 说明引用自
 
     http://enetq.blog.51cto.com/479739/591622
 
+
+
+!!!
+and then run the cuda-tookit.run
+
+select the option of not installing driver..
 
 
 =================================================================
