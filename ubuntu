@@ -1,4 +1,77 @@
 
+https://blog.csdn.net/dark5669/article/details/53157718
+
+
+先到NVIDIA 官网上下载驱动文件（.run 格式）
+
+1.按住CTRL+ALT+F1 进入命令行
+
+2.    sudo service lightdm stop    或者   sudo stop lightdm
+
+3.    sudo init 3
+
+4.  安装驱动程序：     ＃:  sudo    ./NVIDIA-Linux-x86_64-177.67-pkg2.run      //当前目录下执行NVIDIA驱动程序
+
+5.   按照提示安装完成，简单方法重启就好了     sudo  reboot
+
+-------------
+
+问题１　在装驱动之前退出Ｘ server
+ERROR: You appear to be running an X server; please exit X before installing. For further details, please see the section INSTALLING THE NVIDIA DRIVER in the README available on the Linux driver
+解决办法：
+
+
+1,ctrl+alt+f1进入tty1命令行界面
+
+2,输入帐号密码登录
+
+3,执行sudo /etc/init.d/lightdm stop
+
+或者是sudo service lightdm stop
+
+或者是sudo stop lightdm
+
+4,ctrl+alt+f7检查图形界面是否被关闭？
+
+5,安装你的驱动
+
+6,执行sudo /etc/init.d/lightdm start或其他再次启动图形界
+
+
+
+
+
+问题２　退出Ｘ后，出现当前系统仍有
+ERROR:the Nouveau kernel driver is currently in use by your system. …..
+
+Nouveau kernel driver 这个驱动正在被系统使用,这个驱动和Nvidia驱动冲突,要想继续安装,则必须禁用此驱动！因为系统默认装的显卡驱动就是Nouveau .　
+
+Nouveau是一个由爱好者组织的针对NVIDIA显卡开发第三方开源3D驱动的共同项目，并且Nouveau是在完全没有得到NVIDIA任何支持的情况下进行开发的，Nouveau算是X.Org基金会的一个项目
+解决办法：
+
+sudo gedit /etc/default/grub
+把 nomodeset 加到 GRUB_CMDLINE_LINUX 那一行如： 
+
+GRUB_CMDLINE_LINUX="nomodeset"
+然后终端运行： 
+
+sudo update-grub
+重启, 再安装NV驱动
+
+
+
+总结自　13.10如何退出 X Server
+
+    http://www.ubuntukylin.com/ukylin/forum.php?mod=viewthread&tid=5629
+
+Nouveau kernel driver 说明引用自
+
+    http://enetq.blog.51cto.com/479739/591622
+
+
+
+=================================================================
+
 https://www.cnblogs.com/scotth/p/6533397.html
 
 
