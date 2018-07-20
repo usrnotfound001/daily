@@ -19,9 +19,12 @@ CUDA 9.1 (9.1.85) 	>= 390.46 	>= 391.29
 CUDA 9.2 (9.2.88) 	>= 396.26 	>= 397.44
 CUDA 9.2 (9.2.148 Update 1) 	>= 396.37 	>= 398.26
 
-the latest driver version for gt620 is 936.18
-so, need to install cuda 9.1.85 and lower.
-so choose CUDA 8.0
+the latest driver version for gt620 is 936.18, and the driver installed is 384.111
+so, need to install cuda 9.0.76 and lower.
+so choose CUDA 8.0.44.
+Do not need to change driver.
+just reinstall the toolkit.
+
 
 
 ========================================================================
