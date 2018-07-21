@@ -25,7 +25,9 @@ so choose CUDA 8.0.44.
 Do not need to change driver.
 just reinstall the toolkit.
 
-
+when installing cuda 8.0
+Hit rror: unsupported compiler: 4.8.2. 
+Use --override to override this check.
 
 ========================================================================
 https://blog.csdn.net/dark5669/article/details/53157718
